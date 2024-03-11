@@ -6,9 +6,13 @@ import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { SettingModule } from './setting/setting.module';
 import { AccountModule } from './account/account.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     DatabaseModule,
     AuthModule,
     UserModule,
