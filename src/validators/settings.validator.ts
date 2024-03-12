@@ -14,6 +14,7 @@ const typeValidator = {
 };
 
 export function IsType(types: (keyof (typeof typeValidator))[], validationOptions?: ValidationOptions) {
+    // for any complicated code blocks - add comments
     return function (object: Object, propertyName: string) {
         registerDecorator({
             name: "wrongType",
@@ -36,6 +37,7 @@ export function IsType(types: (keyof (typeof typeValidator))[], validationOption
 }
 
 export function matchDataType(data_type: string, value: string | number | boolean) {
+    // just do return data_type === typeof value
     if(data_type === typeof value) {
         return true;
     }

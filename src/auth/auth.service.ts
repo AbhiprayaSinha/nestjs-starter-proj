@@ -39,8 +39,11 @@ export class AuthService {
     }
 
     public async create(user: CreateUserDto) {
+        // should happen inside the model.
+        // use getters/setters. 
         const pass = await this.hashPassword(user.password);
         const newUser = await this.userService.create({ ...user, password: pass });
+        // keep variable names meaningful 
         const { password, ...result } = newUser['dataValues'];
         const token = await this.generateToken(result);
 

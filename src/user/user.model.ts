@@ -10,6 +10,7 @@ export class User extends Model<User> {
     })
     username: string;
     
+    // by default exclude password
     @Column({
         type: DataType.STRING,
         allowNull: false,

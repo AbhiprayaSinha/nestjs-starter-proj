@@ -1,6 +1,7 @@
 import { Table, Column, Model, CreatedAt, UpdatedAt, DeletedAt, DataType } from 'sequelize-typescript';
 
 @Table
+// use InferAttributes
 export class Account extends Model {
     @Column({
         type: DataType.INTEGER,
